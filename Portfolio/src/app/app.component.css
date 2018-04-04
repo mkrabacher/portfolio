@@ -1,0 +1,37 @@
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.link:hover {
+    color: rgb(128, 128, 128)
+}
+
+#nav {
+    position: sticky;
+    top: 10px;
+    text-align: right;
+    width: 1200px;
+    margin: auto;
+}
+
+#splash {
+
+}
+
+#about {
+    height:100vh;
+    background-color: slategray;
+}
+
+#portfolio {
+    height:100vh;
+    background-color: seagreen;
+}
+
+#contact {
+    height:100vh;
+    background-color: darkslategrey;
+}

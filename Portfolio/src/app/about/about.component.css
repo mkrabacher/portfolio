@@ -1,0 +1,38 @@
+#wrapper {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+#about-me {
+    vertical-align: top;
+    max-width: 450px;
+    display: inline-block;
+}
+
+#skills {
+    vertical-align: top;
+    max-width: 450px;
+    display: inline-block;
+}
+
+li {
+    padding: 10px;
+}
+
+#download-btn {
+    display: inline-block;
+    border: 8px solid white;
+    color: white;
+    padding: 20px;
+    border-radius: 5%;
+    margin: 20px;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+#download-btn:hover {
+    background-color: seagreen;
+    padding: 20px;
+
+}

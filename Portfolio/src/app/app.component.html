@@ -1,0 +1,22 @@
+<div id="nav">
+    <a class="link" id="about-link" (click)="_scrollService.ScrollTo('about')">About</a>
+    <a class="link" id="work-link" (click)="_scrollService.ScrollTo('portfolio')">Portfolio</a>
+    <a class="link" id="contact-link" (click)="_scrollService.ScrollTo('contact')">Contact</a>
+</div>
+<div id="content">
+    <div id="splash">
+        <app-splash></app-splash>
+    </div>
+    <div id="about">
+        <app-about></app-about>
+    </div>
+    <div id="portfolio">
+        <app-work></app-work>
+    </div>
+    <div id="contact">
+        <app-contact></app-contact>
+    </div>
+    <div id="footer">
+        <app-footer></app-footer>
+    </div>
+</div>
