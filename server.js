@@ -10,19 +10,11 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(express.static( __dirname + '/Portfolio/dist' ));
 
-mailer = require('express-mailer');
+var nodemailer = require('nodemailer');
 
-mailer.extend(app, {
-    from: 'no-reply@example.com',
-    host: 'smtp.gmail.com', // hostname 
-    secureConnection: true, // use SSL 
-    port: 465, // port for secure SMTP 
-    transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts 
-    auth: {
-        user: 'gmail.user@gmail.com',
-        pass: 'userpass'
-    }
-});
+var router = express.Router();
+// app.use('/mailer', router);
+// router.post('/', handleMailer);
 
 
 //routes
@@ -49,19 +41,30 @@ app.post('/getPet', function (req, res) {
     })
 })
 app.post('/mailer', function (req, res) {
-    console.log('trying to mail now')
-    app.mailer.send('email', {
-        to: 'matt.krabacher@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.  
-        subject: 'Test Email', // REQUIRED. 
-        otherProperty: 'Other Property' // All additional properties are also passed t
-    }, function(err) {
-        if(err){
-            console.log("email error", err)
-            res.json({err})
-        }else{
-            res.send('Email sent')
+    console.log('trying to mail now', req.body)
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'mattkrabacherdesigns@gmail.com', // Your email id
+            pass: 'Mkd4567*' // Your password
         }
-    })
+    });
+    var mailOptions = {
+        from: req.body.email, // sender address
+        to: 'matt.krabacher@gmail.com', // list of receivers
+        subject: `New Portfolio Message from ${req.body.fName} ${req.body.lName}`, // Subject line
+        // text: req.body, //, // plaintext body
+        html: `<h2>Name: ${req.body.fName} ${req.body.lName}</h2><h2>Email: ${req.body.email}</h2><h2>Message:</h2><h3>${req.body.projectIdea}</h3>`
+    };
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            console.log(error);
+            res.json({yo: 'error'});
+        }else{
+            console.log('Message sent: ' + info.response);
+            res.json({yo: info.response});
+        };
+    });
 })
 app.post('/likePet', function (req, res) {
     console.log('likeing pet in server')
@@ -113,7 +116,7 @@ app.post('/addPet', function(req, res) {
     })
 })
 app.all("*", (req,res,next) => {
-    res.sendFile(path.resolve("./TerrorDisplay/dist/index.html"))
+    res.sendFile(path.resolve("./Portfolio/dist/index.html"))
 });
 //end routes
 

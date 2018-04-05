@@ -16,18 +16,18 @@
 
         <div class="contact-box">
             <form #formData='ngForm' id="contact-form" (submit)="mailThroughService()">
-                <label for="mail.fName">First Name   <span class="errorMsg" style="color:red" *ngIf="fName.errors && fName.errors.minlength">Must have longer first name</span></label>
+                <label for="mail.fName">First Name   <span class="errorMsg" *ngIf="fName.errors && fName.errors.minlength">Must have longer first name</span></label>
                 <br>
                 <input type="text" name="mail.fName" id="mail-fName" [(ngModel)]="mail.fName" required minlength="2" #fName="ngModel">
                 <p *ngIf="errorMsg">{{errorMsg}}</p>
                 <br>
 
-                <label for="mail.lName">Last Name   <span class="errorMsg" style="color:red" *ngIf="lName.errors && lName.errors.minlength">Must have longer last name</span></label>
+                <label for="mail.lName">Last Name   <span class="errorMsg" *ngIf="lName.errors && lName.errors.minlength">Must have longer last name</span></label>
                 <br>
                 <input type="text" name="mail.lName" id="mail-lName" [(ngModel)]="mail.lName" required minlength="3" #lName="ngModel">
                 <br>
 
-                <label for="mail.email">Email   <span class="errorMsg" style="color:red" *ngIf="email.errors && email.errors.pattern">Email must be vaild</span></label>
+                <label for="mail.email">Email   <span class="errorMsg" *ngIf="email.errors && email.errors.pattern">Email must be vaild</span></label>
                 <br>
                 <input type="email" name="mail.email" id="mail-email" [(ngModel)]="mail.email" required #email="ngModel" pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b">
                 <br>
@@ -35,8 +35,9 @@
                 <label for="mail.projectIdea">Project Idea</label>
                 <br>
                 <textarea id="mail-projectIdea" name="mail.projectIdea" [(ngModel)]="mail.projectIdea" required minlength="10" #projectIdea="ngModel" placeholder="Write something..."></textarea>
-
-                <br>
+                <p id="returnMsg" *ngIf="returnMsg">{{returnMsg}}</p>
+                <p class="errorMsg" *ngIf="returnErrMsg">{{returnErrMsg}}</p>
+                <br *ngIf="!returnMsg && !returnErrMsg">
                 <input ng-disabled="!formData.valid" type="submit" style="float:right" value="Get In Touch">
             </form>
         </div>

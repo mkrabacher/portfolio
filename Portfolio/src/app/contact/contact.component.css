@@ -100,18 +100,15 @@ hr {
     border-width: 2px;
 }
   
-hr:after {
-    /* content: 'MKD';
-    display: inline-block;
-    position: relative;
-    top: -14px;
-    padding: 0 10px;
-    background: #d9d9d9;
-    color: #8c8b8b;
-    font-size: 18px; */
+#returnMsg {
+    font-size: 16px;
+    font-weight: bolder;
+    color:seagreen;
 }
 
 .errorMsg {
     font-size: 16px;
+    font-weight: bolder;
+    color:red;
 }
 
