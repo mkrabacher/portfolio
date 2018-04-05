@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SplashComponent } from './splash/splash.component';
@@ -10,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import { ScrollService } from './scroll.service';
+import { HttpService } from './http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,11 +26,15 @@ import { ScrollService } from './scroll.service';
     WorkComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
       ScrollToService,
-      ScrollService
+      ScrollService,
+      HttpService
   ],
   bootstrap: [AppComponent]
 })

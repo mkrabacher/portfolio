@@ -1,9 +1,11 @@
 <div id="contact" class="container-fluid">
-    <h1>Contact</h1>
+    <h1 style="font-size: 50px;">Interested in working together?</h1>
     <hr>
     <div class="container-fluid">
         <div class="contact-box">
-            <h3 class="contact-text">If you would like to request more info about me or my experience, my resume, advice on how to get a visa to Sudan or so we can meet up and climb just fill out the form on the right and I'll get back to you as soon as I am able. 
+            <h3 class="contact-text">If you would like to request more info about me or my experience, my resume, advice on how to get a visa to Sudan
+                or so we can meet up and climb just fill out the form on the right and I'll get back to you as soon as I
+                am able.
                 <br>
                 <br>
                 <br>
@@ -13,33 +15,30 @@
         </div>
 
         <div class="contact-box">
-            <form id="contact-form" action="/action_page.php">
+            <form #formData='ngForm' id="contact-form" (submit)="mailThroughService()">
+                <label for="mail.fName">First Name   <span class="errorMsg" style="color:red" *ngIf="fName.errors && fName.errors.minlength">Must have longer first name</span></label>
                 <br>
-                <label for="fname">First Name</label>
-                <br>
-                <input type="text" id="fname" name="firstname" placeholder="Your first name...">
-                <br>
-
-                <label for="lname">Last Name</label>
-                <br>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name...">
+                <input type="text" name="mail.fName" id="mail-fName" [(ngModel)]="mail.fName" required minlength="2" #fName="ngModel">
+                <p *ngIf="errorMsg">{{errorMsg}}</p>
                 <br>
 
-                <label for="email">Email</label>
+                <label for="mail.lName">Last Name   <span class="errorMsg" style="color:red" *ngIf="lName.errors && lName.errors.minlength">Must have longer last name</span></label>
                 <br>
-                <input type="text" id="email-input" name="email" placeholder="Your email address...">
-                <br>
-
-                <label for="subject">Subject</label>
-                <br>
-                <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
+                <input type="text" name="mail.lName" id="mail-lName" [(ngModel)]="mail.lName" required minlength="3" #lName="ngModel">
                 <br>
 
-                <input type="submit" style="float:right" value="Send">
-                <!--submit button does nothing and sends nowhere-->
+                <label for="mail.email">Email   <span class="errorMsg" style="color:red" *ngIf="email.errors && email.errors.pattern">Email must be vaild</span></label>
+                <br>
+                <input type="email" name="mail.email" id="mail-email" [(ngModel)]="mail.email" required #email="ngModel" pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b">
+                <br>
 
+                <label for="mail.projectIdea">Project Idea</label>
+                <br>
+                <textarea id="mail-projectIdea" name="mail.projectIdea" [(ngModel)]="mail.projectIdea" required minlength="10" #projectIdea="ngModel" placeholder="Write something..."></textarea>
+
+                <br>
+                <input ng-disabled="!formData.valid" type="submit" style="float:right" value="Get In Touch">
             </form>
         </div>
-
     </div>
 </div>

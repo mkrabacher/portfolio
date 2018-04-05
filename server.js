@@ -10,48 +10,20 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(express.static( __dirname + '/Portfolio/dist' ));
 
+mailer = require('express-mailer');
 
-// //DB stuff
-// mongoose.connect('mongodb://localhost/GTD');
-// var Schema = mongoose.Schema
-// var AttacksSchema = new mongoose.Schema({
-//     iyear : {
-//         type: Number
-//     },
-//     imonth : {
-//         type: Number
-//     },
-//     iday : {
-//         type: Number
-//     },
-//     country_txt : {
-//         type: String
-//     },
-//     region_txt : {
-//         type: String
-//     },
-//     city : {
-//         type: String
-//     },
-//     latitude : {
-//         type: String
-//     },
-//     longitude : {
-//         type: String
-//     },
-//     summary : {
-//         type: String
-//     },
-//     attacktype1_txt : {
-//         type: String
-//     },
-//     targtype1_txt : {
-//         type: String
-//     },
-// })
-// mongoose.model('attacks', AttacksSchema);
-// var attacks = mongoose.model('attacks');
-// //end DB stuff
+mailer.extend(app, {
+    from: 'no-reply@example.com',
+    host: 'smtp.gmail.com', // hostname 
+    secureConnection: true, // use SSL 
+    port: 465, // port for secure SMTP 
+    transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts 
+    auth: {
+        user: 'gmail.user@gmail.com',
+        pass: 'userpass'
+    }
+});
+
 
 //routes
 app.get('/allAttacks', function (req, res) {
@@ -76,27 +48,18 @@ app.post('/getPet', function (req, res) {
         }
     })
 })
-app.post('/updatePet', function (req, res) {
-    console.log('upating pet in server')
-    Pet.find({name: req.body.name}, function(err, pet) {
-        // console.log('pet', pet[0]._id)
-        // console.log('req', req.body._id)
-        if (pet.length > 0 && pet[0]._id != req.body._id) {
-            res.json({err: "error"})
-        } else {
-            Pet.update({_id: req.body._id}, {
-                name: req.body.name,
-                type: req.body.type,
-                description: req.body.description,
-                skills: req.body.skills,
-            }, function(err, pet) {
-                if(err){
-                    console.log("update error",)
-                    res.json({err})
-                }else{
-                    res.json({message:`pet updated`, pet: req.body._id})
-                }
-            })
+app.post('/mailer', function (req, res) {
+    console.log('trying to mail now')
+    app.mailer.send('email', {
+        to: 'matt.krabacher@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.  
+        subject: 'Test Email', // REQUIRED. 
+        otherProperty: 'Other Property' // All additional properties are also passed t
+    }, function(err) {
+        if(err){
+            console.log("email error", err)
+            res.json({err})
+        }else{
+            res.send('Email sent')
         }
     })
 })
