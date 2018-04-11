@@ -10,6 +10,12 @@ h1 {
     font-size: 50px;
 }
 
+h2 {
+    font-size: 40px;
+    border-bottom: 3px solid white;
+    margin-bottom: 10px;
+}
+
 hr {
     display: block;
     margin-top: 0.5em;
@@ -28,8 +34,17 @@ h2, #about-me, #skills, #wrapper h1{
 
 #about-me, #skills {
     vertical-align: top;
-    max-width: 497px;
+    max-width: 487px;
     display: inline-block;
+}
+
+#about-me {
+    margin-right: 21px;
+}
+
+#about-me h3 {
+    text-align: justify;
+    line-height: 30px;
 }
 
 #resume {
@@ -38,6 +53,10 @@ h2, #about-me, #skills, #wrapper h1{
 
 li {
     padding: 10px;
+}
+
+ul {
+    margin-left: 30px;
 }
 
 #download-btn {
