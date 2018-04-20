@@ -17,7 +17,7 @@ export class SplashComponent implements OnInit {
     constructor(public _scrollService: ScrollService) {
         // typer vars
         // tslint:disable-next-line:max-line-length
-        this.nouns = ['I am a Full-Stack Web Developer', 'I am a JavaScript Enthusiast', 'I Make Scalable Websites', 'I am an Adventurer', 'I Design and Develop Web Apps'];
+        this.nouns = ['I am a Full-Stack Web Developer', 'I am a JavaScript Enthusiast', 'I Make Scalable Websites', 'I Design and Develop Web Apps'];
         this.display = '';
         this.currentNoun = 0;
         this.bool = false;
