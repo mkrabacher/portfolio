@@ -27,12 +27,13 @@ a {
 
 #nav {
     position: fixed;
-    top: 10px;
     text-align: right;
+
     width: 85%;
     margin: auto;
     @include small-screens {
-        top: 0px;
+        z-index: 1000;
+        padding-top: 10px;
         width: 100%;
         background-color:black;
     }
@@ -41,7 +42,6 @@ a {
 #nav-btns {
     @include small-screens {
         text-align: center;
-        z-index: 1000;
     }
 }
 
