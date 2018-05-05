@@ -2,10 +2,9 @@
 @import "../scss/mixins";
 
 h1 {
-    /* background-color: black; */
+    color: white;
     text-align: center;
     height: 140px;
-    color: white;
     position: absolute;
     font-size: 50px;
     padding: 20px;
@@ -20,7 +19,9 @@ h1 {
         position: relative;
     }
     @include small-screens {
+        color: seagreen;
         top: 120px;
+        font-size: 35px;
     }
 }
 
@@ -83,6 +84,61 @@ img {
     animation-direction: normal, alternate;
 }
 
+#download-btn-wrapper {
+    display: none;
+    @include small-screens {
+        display: block;
+    }
+    position: relative;
+    bottom: 80px;
+    width: 100%;
+    text-align: center;
+
+    .download-btn {
+        display: inline-block;
+        border: 4px solid white;
+        color: white;
+        font-size: 20px;
+        padding: 15px 20px;
+        border-radius: 50px;
+        margin: 20px;
+        -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
+        transition: all .5s;
+        img {
+            position: relative;
+            top: 3px;
+            height: 20px;
+        }
+    }
+}
+
+#canvas-container {
+    display: inline-block;
+    width: 100%;
+    text-align:center;
+    @include small-screens {
+        position: relative;
+        bottom: 50px;
+    }
+}
+
+canvas {
+    max-width: 100vw;
+    z-index: -10;
+    @include large-screens {
+        top: 20px;
+        margin: auto;
+    }
+    @include small-screens {
+        margin: auto;
+        position: relative;
+        bottom: 50px;
+        display: inline;
+        z-index: 10;
+        max-height: 45vh;
+    }
+}
+
 #img-wrapper {
     position: absolute;
     z-index: 1000;
@@ -97,7 +153,8 @@ img {
 }
 
 #rolling-text {
+    color: white;
     @include medium-screens {
-        display: none;
+        font-size: 20px;
     }
 }
