@@ -1,3 +1,6 @@
+
+@import "../scss/mixins";
+
 h1 {
     /* background-color: black; */
     text-align: center;
@@ -7,18 +10,23 @@ h1 {
     font-size: 50px;
     padding: 20px;
     z-index: 1000;
-    min-width: 745px;
+    width: 745px;
     top: 49%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include medium-screens {
+        width: auto;
+        margin: auto;
+        position: relative;
+    }
+    @include small-screens {
+        top: 120px;
+    }
 }
 
 img {
     max-width: 100px;
     max-height: 40px;
-    position: absolute;
-    top: 95vh;
-    left: 46.5vw;
 }
 
 @-webkit-keyframes hvr-bob {
@@ -76,9 +84,20 @@ img {
 }
 
 #img-wrapper {
+    position: absolute;
+    z-index: 1000;
+    // left: 50%;
+    bottom: 8px;
+    text-align: center;
     width: 100%;
 }
 
 #wrapper {
     height: 100vh;
+}
+
+#rolling-text {
+    @include medium-screens {
+        display: none;
+    }
 }

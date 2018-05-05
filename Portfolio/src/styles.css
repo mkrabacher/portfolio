@@ -1,39 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    vertical-align: baseline;
-    font-family: 'Tajawal', sans-serif;
-	font-style: inherit;
-	border: 0 none;
-	outline: 0;
-	padding: 0;
-	margin: 0;  
-}
+  vertical-align: baseline;
+  font-family: 'Tajawal', sans-serif;
+  font-style: inherit;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0; }
 
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
+  max-width: 100%;
+  overflow-x: hidden; }
 
 body {
-    background-color: black;
-}
+  background-color: black; }
 
 a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: bolder;
-}
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder; }
 
 canvas {
-    position: absolute;
-    max-width: 98vw;
-    z-index: -10;
-}
+  position: absolute;
+  max-width: 98vw;
+  z-index: 10; }
+  @media only screen and (max-width: 480px) {
+    canvas {
+      top: 20px;
+      max-height: 50%; } }
 
 .mini {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300px;
-}
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px; }

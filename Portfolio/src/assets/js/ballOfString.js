@@ -7,7 +7,7 @@ var size = d3.min([width, height]);
 
 d3.select('#content')
     .attr('width', width + 'px')
-    .attr('height', height + 'px');
+    .attr('height', (height * 0.9) + 'px');
 
 context.lineWidth = 0.4;
 context.strokeStyle = `rgba(255, 255, 255, 0.6)`;
@@ -31,7 +31,7 @@ function update(t) {
 
     projection.rotate([t / 1000]);
 
-    context.clearRect(0, 0, width, height);
+    context.clearRect(0, 0, (width), height);
     context.beginPath();
     geoGenerator(geojson);
     context.stroke();

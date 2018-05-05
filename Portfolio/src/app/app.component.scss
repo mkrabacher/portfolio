@@ -1,12 +1,19 @@
+@import "scss/mixins";
+
 a {
     text-decoration: none;
     color: white;
     font-size: 20px;
     margin: 0 10px;
+    z-index: 100;
     cursor: pointer;
 }
 
 .link:hover {
+    color: seagreen
+}
+
+.active {
     color: seagreen
 }
 
@@ -16,6 +23,18 @@ a {
     text-align: right;
     width: 85%;
     margin: auto;
+    @include small-screens {
+        top: 0px;
+        width: 100%;
+        background-color:black;
+    }
+}
+
+#nav-btns {
+    @include small-screens {
+        text-align: center;
+        z-index: 1000;
+    }
 }
 
 #splash {
@@ -24,7 +43,6 @@ a {
 
 #about {
     min-height:100vh;
-    /* background-color: slategray; */
 }
 
 #about-background {
@@ -33,6 +51,9 @@ a {
     min-width: 99vw;
     z-index: -1;
     opacity: .4;
+    @include large-screens {
+        display:none;
+    }
 }
 
 #portfolio {

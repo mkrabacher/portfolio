@@ -1,6 +1,6 @@
 <div id="wrapper">
-    <h1 id="typer">Hi, My name is Matt.<br>{{display}}</h1>
+    <h1 id="splash-text">Hi, My name is Matt.<br><span id="rolling-text">{{display}}</span></h1>
     <div id="img-wrapper">
-        <button (click)="_scrollService.ScrollTo('about')"><img id="arrow" class="hvr-bob" src="assets/img/down.png" alt="down"></button>
+        <img id="arrow" (click)="_scrollService.ScrollTo('about')" class="hvr-bob" src="assets/img/down.png" alt="down">
     </div>
-</div>
+</div> 
