@@ -1,9 +1,11 @@
+@import '../scss/mixins';
+
 #contact {
     max-width: 1000px;
     min-height: 650px;
-    background-color: darkslategrey;
     display: block;
     margin: auto;
+    margin: 0 11px;
 }
 
 .contact-text {
@@ -17,6 +19,10 @@
     display: inline-block;
     width:48%;
     margin-top: 20px;
+        @include small-screens {
+            display: block;
+            width: 100%;
+        }
 }
   
 label {
@@ -31,8 +37,13 @@ label {
 h1 {
     font-size: 55px;
     color: white;
-    border-bottom: solid 5px white;
+    border-bottom: solid 3px white;
     padding: 50px 10px;
+    @include small-screens {
+        padding: 50px 10px 0;
+        color: seagreen;
+        font-size: 30px;
+    }
 }
   
 input[type=text], input[type=email], select, textarea {
@@ -43,7 +54,7 @@ input[type=text], input[type=email], select, textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-    background-color: darkslategrey;
+    background-color: #313030;
     border:none;
     border-bottom: solid 4px;
     border-left: solid 4px;
@@ -51,7 +62,7 @@ input[type=text], input[type=email], select, textarea {
 }
 
 input[type=text]:focus, input[type=email] {
-    background-color: darkslategrey;
+    background-color: #313030;
     outline: none;
     border: none;      
     border-bottom: solid 4px;
@@ -59,7 +70,7 @@ input[type=text]:focus, input[type=email] {
 }
   
 textarea {
-    background-color: darkslategrey;
+    background-color: #313030;
     outline: none;
     height:200px;
     resize: none;
@@ -69,7 +80,7 @@ textarea {
 }
 
 input[type=submit] {
-    background-color: darkslategrey;
+    background-color: #313030;
     color: white;
     font-size: 20px;
     font-weight: bolder;

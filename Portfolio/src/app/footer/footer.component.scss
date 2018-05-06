@@ -1,3 +1,11 @@
+@import '../scss/mixins';
+
+h3 {
+    @include small-screens {
+        font-size: 15px;
+    }
+}
+
 #cred {
     background-color: #222;
     display: block;
@@ -6,14 +14,18 @@
 
 #col {
     text-align:center;
-    padding-left:50px;
-    padding-right:50px;
-    padding-bottom:10px;
+    padding: 0 50px 10px;
+    @include small-screens {
+        padding: 0px;
+    }
 }
 
 #copyright {
     color:darkgrey;
     text-align:center;
+    @include small-screens {
+        font-size: 10px;
+    }
 }
   
 .link-btn {
@@ -23,6 +35,10 @@
     margin:10px;
     padding:10px;
     vertical-align: top;
+    @include small-screens {
+        padding: 0px;
+        margin: 0px;
+    }
 }
 
 .icon:hover {
