@@ -27,7 +27,7 @@ export class ContactComponent implements OnInit {
         console.log('sending now');
         const observable = this._httpService.mail(this.mail);
         observable.subscribe(data => {
-            console.log(data);
+            // console.log(data);
             if (data['yo'] === 'error') {
                 this.returnErrMsg = 'We\'re sorry but there seems to have been an error sending your message please try again.';
             } else {

@@ -33,6 +33,10 @@ h3 .techs {
 
 .project-img {
     width: 400px;
+    @include small-screens {
+        max-width: 93vw;
+        float: none;
+    }
     border: 3px solid seagreen;
     margin: auto;
 }
@@ -46,6 +50,9 @@ h3 .techs {
     display: inline-block;
     text-align: justify;
     width: 50%;
+    @include small-screens {
+        width: 100%;
+    }
     color: white;
     vertical-align: top;
 }
