@@ -1,11 +1,9 @@
+@import "../scss/mixins";
+
 h3 .techs {
     padding: 500px;
 }
 
-h1 {
-    font-size: 55px;
-    color: white;
-}
 
 #wrapper {
     padding-bottom: 60px;
@@ -13,8 +11,23 @@ h1 {
     margin: auto;
 }
 
+#work-header {
+    margin: 0 11px;
+    padding-top: 40px;
+    border-bottom: solid 3px white;
+    h1 {
+        font-size: 55px;
+        color: white;
+        @include small-screens {
+            display: inline;
+            color: seagreen;
+            font-size: 30px;
+        }
+    }
+}
+
 .project-box {
-    border-bottom: solid 5px white;
+    border-bottom: solid 3px white;
     padding: 50px 10px;
 }
 
