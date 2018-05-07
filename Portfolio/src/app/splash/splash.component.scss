@@ -112,6 +112,11 @@ h1 {
             height: 20px;
         }
     }
+    .download-btn:hover {
+        margin: 20px 10px;
+        background-color: seagreen;
+        padding: 15px 30px;
+    }
 }
 
 #canvas-container {
