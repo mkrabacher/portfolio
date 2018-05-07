@@ -5,35 +5,36 @@
             <h3 class="contact-text">
                 If you would like to request more info about me, my experience, my resume, advice on how to get a tourist visa to Sudan or so we can meet up and climb just fill out the form on the right and I'll get back to you as soon as I am able.
                 <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                Please no spam or soliciting.
+                <span>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    Please no spam or soliciting.
+                </span>
             </h3>
         </div>
 
         <div class="contact-box">
             <form #formData='ngForm' id="contact-form" (submit)="mailThroughService()">
                 <div class="input-box">
-                    <label for="mail.fName">First Name   <span class="errorMsg" *ngIf="fName.errors && fName.errors.minlength">Must have longer first name</span></label>
-                    <br>
-                    <input type="text" name="mail.fName" id="mail-fName" [(ngModel)]="mail.fName" required minlength="2" #fName="ngModel">
-                    <p *ngIf="errorMsg">{{errorMsg}}</p>
-                    <br>
+                    <div>
+                        <label for="mail.fName">First Name</label>
+                        <p><span class="errorMsg" *ngIf="fName.errors && fName.errors.minlength">Must have longer first name</span></p>
+                        <input type="text" name="mail.fName" id="mail-fName" [(ngModel)]="mail.fName" required minlength="2" #fName="ngModel">
+                    </div>
+                    <div>
+                        <label for="mail.lName">Last Name</label>
+                        <p> <span class="errorMsg" *ngIf="lName.errors && lName.errors.minlength">Must have longer last name</span></p>
+                        <input type="text" name="mail.lName" id="mail-lName" [(ngModel)]="mail.lName" required minlength="3" #lName="ngModel">
+                        <br>
+                    </div>
                 </div>
 
                 <div class="input-box">
-                    <label for="mail.lName">Last Name   <span class="errorMsg" *ngIf="lName.errors && lName.errors.minlength">Must have longer last name</span></label>
-                    <br>
-                    <input type="text" name="mail.lName" id="mail-lName" [(ngModel)]="mail.lName" required minlength="3" #lName="ngModel">
-                    <br>
-                </div>
-
-                <div class="input-box">
-                    <label for="mail.email">Email   <span class="errorMsg" *ngIf="email.errors && email.errors.pattern">Email must be vaild</span></label>
-                    <br>
+                    <label for="mail.email">Email</label>
+                    <p><span class="errorMsg" *ngIf="email.errors && email.errors.pattern">Email must be vaild</span></p>
                     <input type="email" name="mail.email" id="mail-email" [(ngModel)]="mail.email" required #email="ngModel" pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b">
                     <br>
                 </div>

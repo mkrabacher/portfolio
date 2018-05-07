@@ -31,25 +31,97 @@ h3 .techs {
     padding: 50px 10px;
 }
 
-.project-img {
-    width: 400px;
+.right {
+    float: right;
     @include small-screens {
-        max-width: 93vw;
         float: none;
-    }
-    border: 3px solid seagreen;
-    margin: auto;
+    }   
 }
 
+
 .project-img-frame {
-    width: 49%;
     display: inline-block;
+    .project-logo {
+        position: absolute;
+        background-color: #585858;
+        display: block;
+        opacity: 0.9;
+        filter: alpha(opacity=50);
+        transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -webkit-transition: opacity 1s ease-in-out;
+    }
+    .project-logo:hover {
+        opacity: 0.0;
+        transition: opacity .55s ease-in-out;
+        -moz-transition: opacity .55s ease-in-out;
+        -webkit-transition: opacity .55s ease-in-out;
+    }
+    .BivyMapsLogo {
+        width: 406px;
+        padding: 105px 0;
+        @include small-screens {
+            max-width: 93vw;
+            height: 35vh;
+            padding: 0;
+        }     
+    }
+    .psyberwarLogo {
+        width: 406px;
+        height: 231px;
+        @include small-screens {
+            max-width: 93vw;
+            height: 35vh;
+        }  
+    }
+
+    .terrorviewLogo {
+        width: 406px;
+        height: 264px;
+        opacity: 0.6;
+        @include small-screens {
+            max-width: 93vw;
+            height: 35vh;
+        } 
+    }
+    .GithubBattleLogo {
+        width: 406px;
+        height: 264px;
+        opacity: 0.9;
+        @include small-screens {
+            max-width: 93vw;
+            height: 35vh;
+        }
+    }
+    .project-img {
+        width: 400px;
+        border: 3px solid seagreen;
+        margin: auto;
+        @include small-screens {
+            max-width: 93vw;
+            height: 35vh;
+            border: none;
+        }
+    }
+}
+
+.mobile-frame {
+    display: none;
+    @include small-screens {
+        display: inline;
+    }
+}
+
+.large-frame {
+    @include small-screens {
+        display: none;
+    }
 }
 
 .project-desc {
-    display: inline-block;
     text-align: justify;
     width: 50%;
+    display: inline-block;
     @include small-screens {
         width: 100%;
     }

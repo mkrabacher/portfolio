@@ -5,18 +5,26 @@
     min-height: 650px;
     display: block;
     margin: auto;
+    @include small-screens {
+        padding: 10px;
+    }
 }
 
 .contact-text {
     margin-right: 30px;
     color:white;
     text-align:justify;
+    @include small-screens {
+        span {
+            display: none;
+        }
+    }
 }
 
 .contact-box {
     vertical-align: top;
     display: inline-block;
-    width:48%;
+    width: 49%;
     margin-top: 20px;
         @include small-screens {
             display: block;
@@ -27,17 +35,30 @@
 label {
     color: white;
     font-size: 50px;
+    padding-right: 16px;
+    @include small-screens {
+        font-size: 30px;
+    }
 }
 
 .input-box {
     display: inline-block;
+    width: 100%;
+    div {
+        display: inline-block;
+        vertical-align: top;
+        @include small-screens {
+            width: 95%;
+            display: inline;
+        }
+    }
 }
 
 h1 {
     font-size: 55px;
     color: white;
     border-bottom: solid 3px white;
-    padding: 50px 10px;
+    padding: 50px 10px 0;
     @include small-screens {
         padding: 50px 10px 0;
         color: seagreen;
@@ -49,7 +70,7 @@ input[type=text], input[type=email], select, textarea {
     width: 100%;
     color: white;
     font-size: 20px;
-    padding: 12px;
+    padding: 12px 6px;
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
@@ -58,24 +79,14 @@ input[type=text], input[type=email], select, textarea {
     border-bottom: solid 4px;
     border-left: solid 4px;
     outline:none;
-}
-
-input[type=text]:focus, input[type=email] {
-    background-color: #313030;
-    outline: none;
-    border: none;      
-    border-bottom: solid 4px;
-    border-left: solid 4px;
+    @include small-screens {
+        width: 95%;
+    }
 }
   
 textarea {
-    background-color: #313030;
-    outline: none;
     height:200px;
     resize: none;
-    border: none;
-    border-bottom: solid 4px;
-    border-left: solid 4px;
 }
 
 input[type=submit] {
@@ -90,6 +101,9 @@ input[type=submit] {
     margin: 20px;
     -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
     transition: all .5s;
+    @include small-screens {
+        width: 90%;
+    }
 }
 
 
@@ -125,5 +139,8 @@ hr {
     font-size: 16px;
     font-weight: bolder;
     color:red;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 60px;
 }
 
