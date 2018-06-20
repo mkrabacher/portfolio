@@ -24,7 +24,7 @@ app.post('/mailer', function (req, res) {
         service: 'Gmail',
         auth: {
             user: 'mattkrabacherdesigns@gmail.com', // Your email id
-            pass: 'Mkd4567*' // Your password
+            pass: 'Mkd456&8' // Your password
         }
     });
     var mailOptions = {
