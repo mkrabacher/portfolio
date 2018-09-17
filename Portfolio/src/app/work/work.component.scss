@@ -51,12 +51,14 @@ h3 .techs {
         -moz-transition: opacity 1s ease-in-out;
         -webkit-transition: opacity 1s ease-in-out;
     }
+
     .project-logo:hover {
         opacity: 0.0;
         transition: opacity .55s ease-in-out;
         -moz-transition: opacity .55s ease-in-out;
         -webkit-transition: opacity .55s ease-in-out;
     }
+
     .BivyMapsLogo {
         width: 406px;
         padding: 105px 0;
@@ -66,6 +68,17 @@ h3 .techs {
             padding: 0;
         }     
     }
+
+    .seamsmithLogo {
+        width: 406px;
+        padding: 55px 0;
+        background-color: white;
+        @include small-screens {
+            max-width: 93vw;
+            padding: 65px 0;
+        }  
+    }
+
     .psyberwarLogo {
         width: 406px;
         height: 231px;
