@@ -24,7 +24,7 @@ app.post('/mailer', function (req, res) {
         service: 'Gmail',
         auth: {
             user: 'mattkrabacherdesigns@gmail.com', // Your email id
-            pass: 'Mkd456&8' // Your password
+            pass: 'Mjk4567*' // Your password
         }
     });
     var mailOptions = {
@@ -36,6 +36,7 @@ app.post('/mailer', function (req, res) {
     };
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
+            console.log('error with the mailer', error)
             res.json({yo: error});
         }else{
             console.log('Message sent: ' + info.response);
