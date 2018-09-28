@@ -1,4 +1,5 @@
 @import "scss/mixins";
+@import "scss/variables";
 
 a {
     // text-decoration: none;
@@ -56,12 +57,12 @@ a {
 }
 
 #about {
-    min-height:100vh;
+    height:$about-height;
 }
 
 #about-background {
     position: absolute;
-    max-height: 100vh;
+    max-height: $about-height;
     min-width: 99vw;
     z-index: -1;
     opacity: .4;
